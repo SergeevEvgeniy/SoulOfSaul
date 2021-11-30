@@ -21,6 +21,4 @@ public class GeometricService {
     public double countCircumscribedCircleRadius(double x) {
         return x * Math.sqrt(3) / 3;
     }
-
-
 }

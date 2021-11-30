@@ -3,7 +3,8 @@ package by.putseta.task01.service;
 import by.putseta.task01.entity.Data;
 
 public class ExpressionService {
-    Data data = new Data();
+
+    private final Data data = new Data();
 
     public double swapFractionalAndIntegerParts(double x) {
         return (x * 1000) % 1000 + (int) x / 1000.0;
@@ -23,11 +24,7 @@ public class ExpressionService {
     }
 
     public double findSmallerNumber(double x, double y) {  // TODO: написать тест
-        if (x > y) {
-            return y;
-        } else {
-            return x;
-        }
+        return x > y ? y : x;
     }
 
     public int countPositiveNumbers(double a, double b, double c) {
@@ -45,22 +42,19 @@ public class ExpressionService {
     }
 
     public String determineGender(String x) {
-        if (x.equals("B")) {    // TODO: проверка входных данных
-            return "I like girls";
-        } else {
-            return "I like boys";
-        }
+        return x.equals("B") ? "I like boys" : "I like girls";
     }
 
     public String definitionOfAccessLevel(double x) {
-        if (x == 9583 || x == 1747) {
-            return "A,B,C";
-        } else if (x == 3331 || x == 7922) {
-            return "B,C";
-        } else if (x == 9455 || x == 8997) {
-            return "C";
-        } else {
-            return "No any acces";
-        }
+        return switch ((int) x) {
+            case 9583, 1747 ->
+                "A,B,C";
+            case 3331, 7922 ->
+                "B,C";
+            case 9455, 8997 ->
+                "C";
+            default ->
+                "No any acces";
+        };
     }
 }

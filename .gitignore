@@ -1,3 +1,9 @@
 /target
 /.idea
-*.class
+*/build/
+*/build.xml
+*/nbproject/
+*/manifest.mf
+nbactions.xml
+nb-configuration.xml
+/task01/target/
